@@ -6,10 +6,10 @@ def cal_elapsed_mins(a, b, c):
     # initial break cond
     if a < cur_day:
         return -1
-    elif b < cur_hour:
-        return -1
-    elif c < cur_min:
-        return -1
+        if b < cur_hour:
+            return -1
+            if c < cur_min:
+                return -1
 
     elapsed_mins = 0
     while True:
