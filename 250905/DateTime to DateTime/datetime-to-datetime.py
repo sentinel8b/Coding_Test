@@ -16,10 +16,10 @@ def cal_elapsed_mins(a, b, c):
     elapsed_mins = 0
 
     while True:
-        elapsed_mins += 1
-        cur_min += 1
         if cur_day == a and cur_hour == b and cur_min == c:
             return elapsed_mins
+        elapsed_mins += 1
+        cur_min += 1
         
         if cur_min > 59:
             cur_min = 0
