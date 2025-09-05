@@ -19,7 +19,7 @@ def guess_dayname_repeat(m1, d1, m2, d2, A):
     day_diff = total_day2 - total_day1
     week = day_diff // 7
     remain_days = day_diff % 7
-    if day_idx < remain_days:
+    if day_idx <= remain_days:
         week +=1
     return week
 ans = guess_dayname_repeat(m1, d1, m2, d2, A)
