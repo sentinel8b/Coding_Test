@@ -4,13 +4,8 @@ a, b, c = map(int, input().split())
 def cal_elapsed_mins(a, b, c):
     cur_day, cur_hour, cur_min = 11, 11, 11
     # initial break cond
-    if a < cur_day:
+    if a <= cur_day and b <= cur_hour and c <= cur_min:
         return -1
-        if b < cur_hour:
-            return -1
-            if c < cur_min:
-                return -1
-
     elapsed_mins = 0
     while True:
         if a == cur_day and b == cur_hour and c == cur_min:
