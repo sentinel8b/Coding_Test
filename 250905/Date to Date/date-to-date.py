@@ -13,6 +13,6 @@ while True:
     elapsed_day += 1
     if d1 > days_per_month[m1]:
         m1 += 1
-        d1 = 0
+        d1 = 1
     
     
