@@ -33,7 +33,18 @@ for x in range(GridSize+1):
             if grid[x][y] == 1:
                 y_coords.append(y)
 
-dx = max(x_coords) - min(x_coords) + 1
-dy = max(y_coords) - min(y_coords) + 1
+if len(x_coords) == 0:
+    dx = 0
+elif len(x_coords) == 1:
+    dx = 1
+else:
+    dx = x_coords[-1] - x_coords[0] + 1
+
+if len(y_coords) == 0:
+    dy = 0
+elif len(y_coords) == 1:
+    dy = 1
+else:
+    dy = max(y_coords) - min(y_coords) + 1
 
 print(dx*dy)
