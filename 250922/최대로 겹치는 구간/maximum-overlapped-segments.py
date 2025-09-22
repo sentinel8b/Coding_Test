@@ -8,7 +8,7 @@ for i in range(n):
     start_idx, end_idx = segments[i]
     start_idx+=100
     end_idx+=100
-    for j in range(start_idx-1, end_idx):
+    for j in range(start_idx, end_idx):
         grid[j]+=1
 
 print(max(grid))
