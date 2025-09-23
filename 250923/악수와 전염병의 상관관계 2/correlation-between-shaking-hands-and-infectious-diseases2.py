@@ -17,6 +17,12 @@ for t, x, y in handshakes:
             # Add y to infected
             if y not in infected.keys():
                 infected[y] = K
+    if y in infected.keys():
+        if infected[y] > 0:
+            infected[y] -= 1
+            # Add y to infected
+            if x not in infected.keys():
+                infected[x] = K
 
 # Trace who is infected
 for i in range(1, N+1):
