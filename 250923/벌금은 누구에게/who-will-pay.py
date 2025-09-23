@@ -9,3 +9,5 @@ for target in student:
     if penality_list[target] == K:
         print(target)
         break
+else:
+    print(-1)
