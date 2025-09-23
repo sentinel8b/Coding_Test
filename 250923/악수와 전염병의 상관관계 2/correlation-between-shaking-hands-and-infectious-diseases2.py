@@ -11,18 +11,22 @@ handshakes = sorted(handshakes, key = lambda x : (x[0], x[1], x[2]))
 # Iterate over handsakes following time order
 for t, x, y in handshakes:
     # If x is infected who has remains
+    initially_added = False
     if x in infected.keys():
         if infected[x] > 0:
             infected[x] -= 1
             # Add y to infected
             if y not in infected.keys():
                 infected[y] = K
-    if y in infected.keys():
-        if infected[y] > 0:
-            infected[y] -= 1
-            # Add y to infected
-            if x not in infected.keys():
-                infected[x] = K
+                initially_added = True
+    # If x is infected who has remains          
+    if not initially_added:
+        if y in infected.keys():
+            if infected[y] > 0:
+                infected[y] -= 1
+                # Add y to infected
+                if x not in infected.keys():
+                    infected[x] = K
 
 # Trace who is infected
 for i in range(1, N+1):
