@@ -11,12 +11,10 @@ for i in range(len(arr)):
     elif arr[i] == arr[i-1]:
         cur_cnt += 1
     elif arr[i] != arr[i-1]:
-        if cur_cnt > max_cnt:
-            max_cnt = cur_cnt
         cur_cnt = 1
+        
+    if cur_cnt > max_cnt:
+        max_cnt = cur_cnt
 
-if cur_cnt > max_cnt:
-    max_cnt = cur_cnt
-    cur_cnt = 1
 
 print(max_cnt)
