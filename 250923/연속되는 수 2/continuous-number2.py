@@ -2,7 +2,7 @@ n = int(input())
 arr = [int(input()) for _ in range(n)]
 
 
-max_cnt = 0
+max_cnt = 1
 # Please write your code here.
 cur_cnt = 1
 for i in range(len(arr)):
