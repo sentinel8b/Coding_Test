@@ -27,6 +27,8 @@ for _ in range(t):
     if not in_range(new_x, new_y):
         #change dir
         cur_dir = cur_dir-2
+        if cur_dir < 0:
+            cur_dir += 4
     else:
         cur_x = new_x
         cur_y = new_y
