@@ -26,7 +26,7 @@ for _ in range(t):
     new_y = cur_y + dy
     if not in_range(new_x, new_y):
         #change dir
-        cur_dir = abs(cur_dir-2)%4
+        cur_dir = cur_dir-2
     else:
         cur_x = new_x
         cur_y = new_y
