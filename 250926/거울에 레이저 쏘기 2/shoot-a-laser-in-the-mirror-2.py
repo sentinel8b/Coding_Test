@@ -44,7 +44,7 @@ while True:
             dir_idx = (dir_idx - 1 + 4)%4
     if in_range(x + dxs[dir_idx], y + dys[dir_idx]):
         x = x + dxs[dir_idx]
-        y = y + dxs[dir_idx]
+        y = y + dys[dir_idx]
     else:
         print(ans)
         break
