@@ -3,7 +3,7 @@ n, m = map(int, input().split())
 # Please write your code here.
 grid = [[0] * m for _ in range(n)]
 
-alphabet_string = 'ABCDEFGHIJKLMNOPQRSTVWXYZ'
+alphabet_string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 dxs = [0, 1, 0, -1] # R D L U
 dys = [1, 0, -1 ,0]
 
