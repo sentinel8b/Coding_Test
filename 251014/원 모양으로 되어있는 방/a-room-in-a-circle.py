@@ -1,8 +1,9 @@
+import sys
 n = int(input())
 a = [int(input()) for _ in range(n)]
 
 # Please write your code here.
-min_value = 10000000
+min_value = sys.maxsize
 # iterating over starting point
 for i in range(n):
     dist = 0
