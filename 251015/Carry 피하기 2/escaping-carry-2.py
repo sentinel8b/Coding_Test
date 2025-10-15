@@ -24,4 +24,7 @@ for i in range(n):
             if not check_carry(num1, num2, num3):
                 max_val = max(num1+num2+num3, max_val)
 
-print(max_val)
+if max_val == 0:
+    print(-1)
+else:
+    print(max_val)
