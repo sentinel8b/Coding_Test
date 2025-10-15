@@ -15,7 +15,7 @@ def _check_carry_pair(num1, num2):
 
 # Please write your code here.
 def check_carry(num1, num2, num3):
-    return True if _check_carry_pair(num1, num2) or _check_carry_pair(num1, num3) or _check_carry_pair(num2, num3) else False
+    return _check_carry_pair(num1, num2) or _check_carry_pair(num1, num3) or _check_carry_pair(num2, num3)
 
 for i in range(n):
     for j in range(i+1, n):
