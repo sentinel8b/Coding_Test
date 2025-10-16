@@ -37,19 +37,21 @@ for i in range(2, n-2):
 for i in [0, 18]:
     for j in range(2, n-2):
         center_val = board[i][j]
-        board[i][j-2] == board[i][j-1] == board[i][j+1] == board[i][j+2] == center_val
-        winner = center_val
-        print(winner)
-        print(i+1, j+1)
-        exit()
+        if center_val != 0:
+            if board[i][j-2] == board[i][j-1] == board[i][j+1] == board[i][j+2] == center_val:
+                winner = center_val
+                print(winner)
+                print(i+1, j+1)
+                exit()
 
 for j in [0, 18]:
     for i in range(2, n-2):
         center_val = board[i][j]
-        if board[i-2][j] == board[i-1][j] == board[i+1][j] == board[i+2][j] == center_val:
-            winner = center_val
-            print(winner)
-            print(i+1, j+1)
-            exit()
+        if center_val != 0:
+            if board[i-2][j] == board[i-1][j] == board[i+1][j] == board[i+2][j] == center_val:
+                winner = center_val
+                print(winner)
+                print(i+1, j+1)
+                exit()
 else:
     print(winner)
