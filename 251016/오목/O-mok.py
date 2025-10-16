@@ -32,4 +32,5 @@ for i in range(2, n-2):
                 print(winner)
                 print(i+1, j+1)
                 exit()
-
+else:
+    print(winner)
