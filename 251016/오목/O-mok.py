@@ -23,13 +23,13 @@ for i in range(2, n-2):
             # 대각 (좌)
             if board[i-2][j-2] == board[i-1][j-1] == board[i+1][j+1] == board[i+2][j+2] == center_val:
                 winner = center_val
-                print(i+1, j+1)
                 print(winner)
+                print(i+1, j+1)
                 exit()
             # 대각 (우)
             if board[i+2][j-2] == board[i+1][j-1] == board[i-1][j+1] == board[i-2][j+2] == center_val:
                 winner = center_val
-                print(i+1, j+1)
                 print(winner)
+                print(i+1, j+1)
                 exit()
 
