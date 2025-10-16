@@ -4,54 +4,34 @@ board = [list(map(int, input().split())) for _ in range(19)]
 n = 19
 winner = 0
 
-for i in range(2, n-2):
-    for j in range(2, n-2):
-        center_val = board[i][j]
-        if center_val != 0:
-            # 가로
-            if board[i][j-2] == board[i][j-1] == board[i][j+1] == board[i][j+2] == center_val:
-                winner = center_val
-                print(winner)
-                print(i+1, j+1)
-                exit()
-            # 세로
-            if board[i-2][j] == board[i-1][j] == board[i+1][j] == board[i+2][j] == center_val:
-                winner = center_val
-                print(winner)
-                print(i+1, j+1)
-                exit()
-            # 대각 (좌)
-            if board[i-2][j-2] == board[i-1][j-1] == board[i+1][j+1] == board[i+2][j+2] == center_val:
-                winner = center_val
-                print(winner)
-                print(i+1, j+1)
-                exit()
-            # 대각 (우)
-            if board[i+2][j-2] == board[i+1][j-1] == board[i-1][j+1] == board[i-2][j+2] == center_val:
-                winner = center_val
-                print(winner)
-                print(i+1, j+1)
+dxs = [-1, 1, 0, 0, -1, -1, 1, 1] # N, S, W, E, NE, NW, SE, SW 
+dys = [0, 0, -1, 1, 1, -1, 1, -1]
+
+def in_range(x, y):
+    return x >= 0 and y >= 0 and x < 19 and y < 19
+
+
+for i in range(n):
+    for j in range(n):
+        for dx, dy in zip(dxs, dys):
+            if board[i][j] == 0:
+                continue
+            cur_x, cur_y = i, j
+            curt = 1
+            color = board[i][j]
+            while True:
+                if not in_range(cur_x + dx, cur_y + dy):
+                    break
+                if color != board[cur_x + dx][cur_y + dy]:
+                    break
+                curt += 1
+                cur_x = cur_x + dx
+                cur_y = cur_y + dy
+            
+            if curt == 5:
+                print(board[i][j])
+                print(i + 2 * dx + 1, j + 2 * dy + 1)
                 exit()
 
-# edge case
-for i in [0, 18]:
-    for j in range(2, n-2):
-        center_val = board[i][j]
-        if center_val != 0:
-            if board[i][j-2] == board[i][j-1] == board[i][j+1] == board[i][j+2] == center_val:
-                winner = center_val
-                print(winner)
-                print(i+1, j+1)
-                exit()
-
-for j in [0, 18]:
-    for i in range(2, n-2):
-        center_val = board[i][j]
-        if center_val != 0:
-            if board[i-2][j] == board[i-1][j] == board[i+1][j] == board[i+2][j] == center_val:
-                winner = center_val
-                print(winner)
-                print(i+1, j+1)
-                exit()
 else:
-    print(winner)
+    print(0)
