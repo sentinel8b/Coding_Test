@@ -1,6 +1,6 @@
 n, m = map(int, input().split())
 
-if n == 1:
+if m == 0:
     print(0)
     exit()
 
