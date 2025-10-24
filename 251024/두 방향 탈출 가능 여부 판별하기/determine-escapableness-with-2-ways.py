@@ -1,14 +1,14 @@
 n, m = map(int, input().split())
 
 grid = [list(map(int, input().split())) for _ in range(n)]
-visited_grid = [[0]*n for _ in range(n)]
+visited_grid = [[0]*m for _ in range(n)]
 
 #D R
 dxs = [1, 0] 
 dys = [0, 1]
 
 def in_range(x,y):
-    return x >= 0 and x < n and y >= 0 and y < n
+    return x >= 0 and x < n and y >= 0 and y < m
 
 def can_go(x,y):
     if not in_range(x, y):
@@ -27,7 +27,7 @@ def dfs(x,y):
 
 visited_grid[0][0] = 1
 dfs(0,0)
-if visited_grid[n-1][n-1]:
+if visited_grid[n-1][m-1]:
     print(1)
 else:
     print(0)
