@@ -1,9 +1,5 @@
 n, m = map(int, input().split())
 
-if m == 0:
-    print(0)
-    exit()
-
 adj_mat = [[0]*(n+1) for _ in range(n+1)]
 
 for _ in range(m):
@@ -23,4 +19,8 @@ def dfs(start_idx):
             dfs(node)
 
 dfs(1)
-print(sum(visitied)-1)
+
+if sum(visitied) >= 1:
+    print(sum(visitied)-1)
+else:
+    print(0)
