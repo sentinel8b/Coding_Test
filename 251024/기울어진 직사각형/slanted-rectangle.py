@@ -20,12 +20,13 @@ for x in range(n):
                 
                 if in_range(p2[0], p2[1]) and in_range(p3[0], p3[1]) and in_range(p4[0], p4[1]):
                     current_sum = 0
+                    path_x, path_y = x, y
                     for dir_idx, repeat in enumerate([k,l,k,l]):
                         for _ in range(repeat):
                             dx, dy = dxs[dir_idx], dys[dir_idx]
-                            x = x+dx
-                            y = y+dy
-                            current_sum += grid[x][y]
+                            path_x = path_x+dx
+                            path_y = path_y+dy
+                            current_sum += grid[path_x][path_y]
                     max_val = max(max_val, current_sum)
 
 print(max_val)
