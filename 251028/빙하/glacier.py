@@ -53,7 +53,9 @@ while True:
                     ny = y + dy
                     if in_range(nx, ny) and external_visited[nx][ny] == 1:
                         is_exposed = True
-                        melt_list.append((x,y))
+                        break
+                if is_exposed:
+                    melt_list.append((x,y))
 
     for x, y in melt_list:
         grid[x][y] = 0
