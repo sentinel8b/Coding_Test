@@ -61,11 +61,12 @@ for comb in stone_combs:
     for stone_coord in comb:
         stone_x, stone_y = stone_coord
         temp_grid[stone_x][stone_y] = 0
-        for start_coord in pts:
-            start_x, start_y = start_coord
-            start_x -= 1
-            start_y -= 1
-            bfs(start_x, start_y)
+        
+    for start_coord in pts:
+        start_x, start_y = start_coord
+        start_x -= 1
+        start_y -= 1
+        bfs(start_x, start_y)
 
     for x in range(n):
         for y in range(n):
