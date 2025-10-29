@@ -1,26 +1,26 @@
 import sys
 input_str = input()
 
-char_cnt = 0
+unique_chars_set = set()
 op_list = []
 for char in input_str:
     if char.isalpha():
-        char_cnt += 1
+        unique_chars_set.add(char)
     else:
         op_list.append(char)
 
+unique_chars_list = list(unique_chars_set)
+num_unique_chars = len(unique_chars_list)
+
 max_val = -sys.maxsize
-num_list = []
+
+value_map = {} 
 
 def calc_eq(num_list):
-    # 첫 번째 숫자를 초기 결과값으로 설정
     result = num_list[0]
-    
-    # op_list를 순회하면서 연산을 차례대로 적용
-    # i는 0부터 op_list의 길이 - 1 까지
     for i in range(len(op_list)):
         op = op_list[i]
-        next_num = num_list[i+1] # 연산할 다음 숫자
+        next_num = num_list[i+1]
         
         if op == '+':
             result += next_num
@@ -33,17 +33,24 @@ def calc_eq(num_list):
 
 def backtrack_max_val(idx):
     global max_val
-    global num_list
+    global value_map
 
-    if idx == char_cnt:
+    if idx == num_unique_chars:
+        
+        num_list = []
+        for char in input_str:
+            if char.isalpha():
+                num_list.append(value_map[char]) 
+        
+        # 5. 생성된 num_list로 식 계산
         case_val = calc_eq(num_list)
         max_val = max(max_val, case_val)
         return
 
-    for i in range(1,4+1):
-        num_list.append(i)
-        backtrack_max_val(idx + 1)
-        num_list.pop()
+    current_char = unique_chars_list[idx]
+    for i in range(1, 4 + 1):
+        value_map[current_char] = i    
+        backtrack_max_val(idx + 1)     
 
 backtrack_max_val(0)
 
