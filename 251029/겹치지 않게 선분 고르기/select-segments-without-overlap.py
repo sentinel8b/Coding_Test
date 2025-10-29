@@ -5,21 +5,19 @@ max_cnt = 0
 picked_lines = [] # lines will be added
 
 def is_valid(line_list):
-    valid_flag = True
-
-    #empty or has only one element
-    if len(line_list) <= 1:
+    if len(line_list) > 1:
+        pivot = line_list[-1] # 가장 최근에 뽑은 선
+        pivot_start = pivot[0]
+        pivot_end = pivot[1]
+        for line in line_list[:-1]: # 자기 빼고 이전 선 순회하면서
+            line_start = line[0]
+            line_end = line[1]
+            if line_start <= pivot_start <= line_end or line_start <= pivot_end <= line_end:
+                return False
+        return True
+    else:
         return True
 
-    line_list = sorted(line_list, key = lambda x : x[0]) # sort based on starting pt
-    for i in range(1, len(line_list)):
-        line1_end = line_list[i-1][1]
-        line2_start = line_list[i][0]
-        if line2_start > line1_end:
-            continue
-        else:
-            valid_flag = False
-    return valid_flag
 
 def pick_lines():
     global picked_lines
