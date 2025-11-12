@@ -9,4 +9,4 @@ if len(dp) > 3:
 for i in range(4, n+1):
         dp[i] = dp[i-2] + dp[i-3]
 
-print(dp[-1])
+print(dp[-1]%10007)
