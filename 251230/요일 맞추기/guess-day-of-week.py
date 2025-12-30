@@ -19,5 +19,5 @@ else:
     for i in month_total:
         days_total -= i
 
-    days_total -= day_total
+    days_total += day_total
     print(name_of_days[days_total % 7 - 7])
