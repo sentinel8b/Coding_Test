@@ -4,7 +4,7 @@ n = input()
 # Please write your code here.
 t = 0
 for i in range(len(n)):
-    t += 8 ** i * int(n[::-1][i])
+    t += a ** i * int(n[::-1][i])
 
 tmp_list = []
 while True:
@@ -12,4 +12,5 @@ while True:
     t = t // b
     if t == 0:
         break
+
 print(int(''.join(tmp_list[::-1])))
