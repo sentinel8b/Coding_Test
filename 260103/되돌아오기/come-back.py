@@ -19,4 +19,6 @@ for n in range(N):
         if init_loc[0] == 0 and init_loc[1] == 0:
             init_time = time_count
             break
+    if init_loc[0] == 0 and init_loc[1] == 0:
+        break
 print(init_time)
