@@ -4,7 +4,7 @@ dir = [move[0] for move in moves]
 dist = [int(move[1]) for move in moves]
 
 # Please write your code here.
-dx, dy = [1, 0, 0, -1], [0, 1, -1, 0]
+dx, dy = [-1, 0, 0, 1], [0, 1, -1, 0]
 dir_dict = {'W':0,'S':1,'N':2,'E':3}
 
 init_loc = [0,0]
