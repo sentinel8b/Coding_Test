@@ -2,7 +2,7 @@ N = int(input())
 arr = [int(input()) for _ in range(N)]
 
 # Please write your code here.
-result = 0
+result = 1
 for n in range(N):
     if n == 0:
         dup_num = 1
