@@ -11,11 +11,14 @@ tmp_list[P] = 1
 for i in range(len(sorted_hs)):
     f_man = sorted_hs[i][1]
     s_man = sorted_hs[i][2]
-    if tmp_list[f_man] == 1 and max_list[f_man] < K:
+    if tmp_list[f_man] == 1 and tmp_list[s_man] != 1 and max_list[f_man] < K:
         tmp_list[s_man] = 1
         max_list[f_man] += 1
-    elif tmp_list[s_man] == 1 and max_list[s_man] < K:
+    elif tmp_list[s_man] == 1 and tmp_list[f_man] != 1 and max_list[s_man] < K:
         tmp_list[f_man] = 1
+        max_list[s_man] += 1
+    elif tmp_list[s_man] == 1 and tmp_list[f_man] == 1:
+        max_list[f_man] += 1
         max_list[s_man] += 1
 
 result = []
