@@ -15,7 +15,7 @@ for i in range(x1[1], x2[1]):
         tmp_list[i][j] = 0
 
 total_sum = 0
-lx, rx, by, ty = 2001, -2001, 2001, -2001
+lx, rx, by, ty = 2001, 0, 2001, 0
 
 for i in range(len(tmp_list)):
     for j in range(len(tmp_list[i])):
