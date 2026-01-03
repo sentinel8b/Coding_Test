@@ -4,7 +4,7 @@ arr = [int(input()) for _ in range(n)]
 # Please write your code here.
 result = 1
 for i in range(n):
-    if n == 0:
+    if i == 0:
         dup_num = 1
     else:
         if arr[i] > arr[i-1]:
