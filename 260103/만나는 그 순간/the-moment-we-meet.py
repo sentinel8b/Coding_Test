@@ -38,15 +38,5 @@ if len(tmp_list1) == len(tmp_list2):
         if tmp_list1[i] == tmp_list2[i]:
             time = i
             break
-elif len(tmp_list1) > len(tmp_list2):
-    for i in range(len(tmp_list2), len(tmp_list1)):
-        if tmp_list1[i] == tmp_list2[-1]:
-            time = i
-            break
-elif len(tmp_list1) < len(tmp_list2):
-    for i in range(len(tmp_list1), len(tmp_list2)):
-        if tmp_list1[-1] == tmp_list2[i]:
-            time = i
-            break
 
 print(time)
