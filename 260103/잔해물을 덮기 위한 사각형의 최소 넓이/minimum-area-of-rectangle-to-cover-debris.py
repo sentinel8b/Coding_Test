@@ -28,5 +28,7 @@ for i in range(len(tmp_list)):
                 by = j
             if j > ty:
                 ty = j
-
-print((rx - lx + 1) * (ty - by + 1))
+if lx == 1001:
+    print(0)
+else:
+    print((rx - lx + 1) * (ty - by + 1))
