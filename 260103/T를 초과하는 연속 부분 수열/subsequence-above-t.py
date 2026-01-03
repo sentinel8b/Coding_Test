@@ -5,16 +5,12 @@ arr = list(map(int, input().split()))
 
 result = 0
 dup_num = 0
-for i in range(n-1):
-    if arr[i] > t and arr[i+1] > t:
+for i in range(n):
+    if arr[i] > t:
         dup_num += 1
-        if result < dup_num:
-            result = dup_num
-    elif arr[i] > t and arr[i+1] <= t:
-        dup_num += 1
-        if result < dup_num:
-            result = dup_num
+    else:
         dup_num = 0
-
+    if dup_num > result:
+        result = dup_num
 
 print(result)
