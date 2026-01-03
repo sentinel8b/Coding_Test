@@ -13,10 +13,10 @@ time_count = 0
 
 for n in range(N):
     for d in range(dist[n]):
+        time_count += 1
         init_loc[0] += dx[dir_dict[dir[n]]]
         init_loc[1] += dy[dir_dict[dir[n]]]
         if init_loc[0] == 0 and init_loc[1] == 0:
             init_time = time_count
             break
-        time_count += 1
-print(init_time + 1)
+print(init_time)
