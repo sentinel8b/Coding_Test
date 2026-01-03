@@ -6,12 +6,12 @@ x1[1], y1[1], x2[1], y2[1] = map(int, input().split())
 
 tmp_list = [[0 for _ in range(2001)] for _ in range(2001)]
 
-for i in range(x1[0], x2[0]):
-    for j in range(y1[0], y2[0]):
+for i in range(x1[0] + 1000, x2[0] + 1000):
+    for j in range(y1[0] + 1000, y2[0] + 1000):
         tmp_list[i][j] = 1
 
-for i in range(x1[1], x2[1]):
-    for j in range(y1[1], y2[1]):
+for i in range(x1[1] + 1000, x2[1] + 1000):
+    for j in range(y1[1] + 1000, y2[1] + 1000):
         tmp_list[i][j] = 0
 
 total_sum = 0
