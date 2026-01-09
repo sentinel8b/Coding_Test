@@ -3,7 +3,7 @@ A = list(map(int, input().split()))
 
 # Please write your code here.
 import sys
-max_cost = -sys.maxsize
+max_cost = sys.maxsize
 
 for i in range(n):
     cost = 0
@@ -14,4 +14,5 @@ for i in range(n):
             cost += (j - i) * A[j]
     if cost < max_cost:
         max_cost = cost
+
 print(max_cost)
