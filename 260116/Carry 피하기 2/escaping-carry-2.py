@@ -4,10 +4,13 @@ arr = [int(input()) for _ in range(n)]
 # Please write your code here.
 
 def check_carry(a, b, c):
-    min_idx_size = min(len(a), len(b))
-    min_idx_size = min(min_idx_size, len(c))
+    max_size = max(len(a), len(b))
+    max_size = max(max_size, len(c))
+    a = [0 for _ in range(max_size - len(a))] + a
+    b = [0 for _ in range(max_size - len(b))] + b
+    c = [0 for _ in range(max_size - len(c))] + c
 
-    for i in range(min_idx_size):
+    for i in range(max_size):
         sum = int(a[::-1][i]) + int(b[::-1][i]) + int(c[::-1][i])
         if sum >= 10:
             return True
