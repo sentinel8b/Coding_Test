@@ -9,7 +9,7 @@ for i in range(n):
         for comp in arr[i:j+1]:
             tmp_val += comp
         tmp_val /= (j+1-i)
-        if tmp_val in arr:
+        if tmp_val in arr[i:j+1]:
             result += 1
 
 print(result)
