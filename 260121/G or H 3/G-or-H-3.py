@@ -7,10 +7,13 @@ for _ in range(n):
     c.append(char)
 
 # Please write your code here.
+
+sorted_x = sorted(x)
+
 result = 0
-for i in range(max(x) - k):
+for i in range(len(sorted_x)):
     tmp_val = 0
-    for j in range(i+1, i+1+k+1):
+    for j in range(sorted_x[i], sorted_x[i] + k + 1):
         if j in x:
             idx = x.index(j)
             if c[idx] == 'G':
