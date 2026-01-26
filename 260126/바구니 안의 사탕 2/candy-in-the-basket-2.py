@@ -15,7 +15,7 @@ max_val = -sys.maxsize + 1
 sorted_pos = sorted(pos)
 min_idx, max_idx = sorted_pos[0], sorted_pos[-1]
 
-for i in range(min_idx, max_idx-K+1):
+for i in range(min_idx, max_idx+1):
     sum = 0
     for j in range(len(pos)):
         p = pos[j]
