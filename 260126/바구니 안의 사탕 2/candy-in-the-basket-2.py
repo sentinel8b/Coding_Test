@@ -8,27 +8,18 @@ for _ in range(N):
     pos.append(p)
 
 # Please write your code here.
+
 import sys
-
-candy_pos = [0 for _ in range(101)]
-candy_pos_d  = [0 for _ in range(101)]
-
-for n in range(N):
-    candy_pos[pos[n]] = candy[n]
-    candy_pos_d[pos[n]] += 1
-
 max_val = -sys.maxsize + 1
 
-for i in range(101):
-    if i >= K:
-        tmp_candy = candy_pos[i - K : i + K + 1]
-        d = candy_pos_d[i - K : i + K + 1]
-    if i < K:
-        tmp_candy = candy_pos[0 : i + K + 1]
-        d = candy_pos_d[0 : i + K + 1]
-    sum = 0
-    for j in range(len(tmp_candy)):
-        sum += tmp_candy[j] * d[j]
-    max_val = max(max_val, sum)
+sorted_pos = sorted(pos)
+min_idx, max_idx = sorted_pos[0], sorted_pos[-1]
 
+for i in range(min_idx+K, max_idx-K+1):
+    sum = 0
+    for j in range(len(pos)):
+        p = pos[j]
+        if p >= i-K and p <= i + K:
+            sum += candy[j]
+    max_val = max(max_val, sum)
 print(max_val)
