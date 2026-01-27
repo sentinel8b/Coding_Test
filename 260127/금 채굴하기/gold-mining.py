@@ -19,7 +19,5 @@ for K in range(50):
             max_fee = max(max_fee, tmp_fee - (K**2 + (K+1)**2))
             if tmp_fee >= (K**2 + (K+1)**2):
                 results = max(total_num, results)
-    if max_fee == 0:
-        break
 
 print(results)
