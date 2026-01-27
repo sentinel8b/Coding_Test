@@ -5,7 +5,7 @@ grid = [list(map(int, input().split())) for _ in range(n)]
 
 results = 0
 
-for K in range(1,50):
+for K in range(50):
     max_fee = 0
     for i in range(n):
         for j in range(n):
