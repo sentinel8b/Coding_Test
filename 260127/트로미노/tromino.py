@@ -6,7 +6,7 @@ import sys
 
 max_b1 = -sys.maxsize + 1
 for i in range(n):
-    for j in range(n):
+    for j in range(m):
         if j + 2 < n:
             sum = grid[i][j] + grid[i][j+1] + grid[i][j+2]
             max_b1 = max(max_b1, sum)
@@ -16,7 +16,7 @@ for i in range(n):
 
 max_b2 = -sys.maxsize + 1
 for i in range(n):
-    for j in range(n):
+    for j in range(m):
         if i+1 < n and j+1 < n:
             sum1 = grid[i][j] + grid[i+1][j] + grid[i+1][j+1]
             sum2 = grid[i][j] + grid[i][j+1] + grid[i+1][j+1]
