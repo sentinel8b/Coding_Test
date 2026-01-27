@@ -15,11 +15,13 @@ num_cnt = 0
 for i in range(len(num_list)):
     tmp_list = num_list[i]
     tmp_val = 1
+    tmp_max = 1
     for j in range(len(tmp_list)-1):
         if tmp_list[j] == tmp_list[j+1]:
             tmp_val += 1
-    if tmp_val >= m:
+            tmp_max = max(tmp_max, tmp_val)
+        else:
+            tmp_val = 1
+    if tmp_max >= m:
         num_cnt += 1
 print(num_cnt)
-
-    
